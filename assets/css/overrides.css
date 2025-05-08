@@ -1,0 +1,15 @@
+.posts article a.image img {
+    width: 400px;
+    height: 300px;
+    object-fit: contain;
+    object-position: center top;
+    display: block;
+    margin: 0 auto;
+}
+
+.posts article p {
+    text-align: justify;
+    text-align-last: left;
+    margin: 1em 0;
+    line-height: 1.5;
+}

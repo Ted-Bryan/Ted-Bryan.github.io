@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<!--@TedBryan | Free for personal and commercial use under the CCA 3.0 license-->
+<html>
+    <head>
+        <title>Career</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <a href="index.html" class="logo">Bruno Fabiani Portfolio</a>
+                    </header>
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul class="links">
+                            <li><a href="index.html">Projects</a></li>
+                            <li class="active"><a href="elements.html">Career</a></li>
+                            <li><a href="generic.html">Licenses &amp; Certifications</a></li>
+                        </ul>
+                        <ul class="icons">
+                            <li><a href="https://www.linkedin.com/in/brunofabiani/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                            <li><a href="https://github.com/Ted-Bryan" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                        </ul>
+                    </nav>
+
+                <!-- Main -->
+                    <div id="main">
+
+                        <!-- Career Overview -->
+                        <section class="post">
+                            <header class="major">
+                                <h1>CAREER RESUME</h1>
+                                <p>Data Analyst with 3+ years of experience leveraging <strong>artificial intelligence</strong>, <strong>machine learning</strong> and <strong>advanced analytics</strong> to drive impact in healthcare and energy sectors.</p>
+                            </header>
+
+                            <!-- Professional Experience -->
+                            <h2>Professional Experience</h2>
+
+                            <h3>Data Analyst @ San Raffaele Hospital &amp; Microsoft</br>
+                                <span class="icon solid fa-map-marker-alt"></span> Milan, Italy</br>
+                                <span class="icon solid fa-calendar-alt"></span> Jul&nbsp;2023&nbsp;–&nbsp;Present</h3>
+                            <ul class="alt">
+                                <li>Member of the joint AI team building an integrated platform aimed to <strong>significantly reduce patient diagnosis &amp; management time</strong>.</li>
+                                <li>Built &amp; deployed <strong> machine learning models</strong> and <strong> interactive dashboards</strong> to boost clinicians’ decision‑making accuracy and cutting diagnostic review time.</li>
+                                <li>Co-authored <strong>3 scientific papers</strong> (under review) on cardiac aortic valve surgery risk stratification, metastatic colon cancer recurrence forcasting, and data quality evaluation on diabetes type 1 & 2.</li>
+                            </ul>
+
+                            <h3>Junior Data Analyst @ Edison&nbsp;Energy</br>
+                                <span class="icon solid fa-map-marker-alt"></span> Milan, Italy</br>
+                                <span class="icon solid fa-calendar-alt"></span> Jun&nbsp;2022&nbsp;–&nbsp;Jun&nbsp;2023</h3>
+                            <ul class="alt">
+                                <li>Built advanced analytics models that <strong>increased profitability</strong> and <strong>cut customer churn rate by 15%</strong>.</li>
+                                <li>Applied clustering &amp; segmentation to support targeted marketing campaigns, <strong>raising ROI by 20%</strong>.</li>
+                            </ul>
+
+                            <!-- Education -->
+                            <h2>Education</h2>
+
+                            <h3>M.Sc. Marketing Analytics &amp; Metrics</br> 
+                                <span class="icon solid fa-map-marker-alt"></span> LUISS Guido Carli, Rome, Italy</br>
+                                <span class="icon solid fa-calendar-alt"></span> Sep&nbsp;2020&nbsp;–&nbsp;Nov&nbsp;2022</h3>
+                            <p class="sub"><strong>Thesis:</strong><q> The Potential of Human‑AI Cooperation in Marketing</q></br>
+                                <strong>Relevant Courses:</strong> AI in Marketing; Customer Intelligence & Big Data; Marketing Big Data Analysis; Statistics for Marketing; Marketing Plan & Markstrat Simulation; Marketing Metrics</p>
+
+                            <h3>Summer School, Entrepreneurial Side of Business</br> 
+                                <span class="icon solid fa-map-marker-alt"></span> Utrecht University, Utrecht, The Netherlands</br>
+                                <span class="icon solid fa-calendar-alt"></span> Jul&nbsp;2019&nbsp;–&nbsp;Aug&nbsp;2019</h3>
+                                <p class="sub"><strong>Courses:</strong> Strategic Entrepreneurship; Social Entrepreneurship; Entrepreneurial Marketing</p>
+
+                                <h3>B.Sc. Economics &amp; Management</br> 
+                                    <span class="icon solid fa-map-marker-alt"></span> LUISS Guido Carli, Rome, Italy</br>
+                                    <span class="icon solid fa-calendar-alt"></span> Sep&nbsp;2017&nbsp;–&nbsp;Nov&nbsp;2020</h3>
+                                <p class="sub"><strong>Relevant Courses:</strong> Marketing; Statistics; Informatics; Mathematics</p>
+
+                            <!-- Skills -->
+                            <h2>Technical Toolbox</h2>
+                            <ul class="icons">
+                                <li><span class="icon solid fa-code"></span> Python; Bash; HTML; CSS; Java</li>
+                                <li><span class="icon solid fa-database"></span> SQL</li>
+                                <li><span class="icon solid fa-chart-line"></span> R</li>
+                                <li><span class="icon solid fa-cloud"></span> Azure ML</li>
+                                <li><span class="icon solid fa-brain"></span> Prompt Engineering</li>
+                                <li><span class="icon brands fa-github"></span> GitHub</li>
+                                <li><span class="icon solid fa-chart-bar"></span> Power&nbsp;BI; Tableau; Qlik&nbsp;Sense; MS Office</li>
+                            </ul>
+
+                            <!-- Languages & Soft Skills -->
+                            <h2>Languages &amp; Soft Skills</h2>
+                            <ul>
+                                <li><strong>Languages:</strong> Italian (Native); English (Fluent); French (Basic)</li>
+                                <li><strong>Soft skills:</strong> Analytical mindset; Fast learning; Time management; Teamwork; Adaptability; Problem‑solving</li>
+                            </ul>
+                        </section>
+
+                    </div>
+
+                <!-- Footer -->
+                    <footer id="footer">
+                        <section class="split contact">
+                            <section class="alt">
+                                <h3>Address</h3>
+                                <p>Milan, Italy</p>
+                            </section>
+                            <section>
+                                <h3>Phone</h3>
+                                <p><a href="tel:+393896959030">(+39) 3896959030</a></p>
+                            </section>
+                            <section>
+                                <h3>Email</h3>
+                                <p><a href="mailto:bruno981902@outlook.com">bruno.fabiani98@gmail.com</a></p>
+                            </section>
+                            <section>
+                                <h3>Social</h3>
+                                <ul class="icons alt">
+                                    <li><a href="https://www.linkedin.com/in/brunofabiani/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                                    <li><a href="https://github.com/Ted-Bryan" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </footer>
+
+                <!-- Copyright -->
+                    <div id="copyright">
+                        <ul><li>&copy; BRUNO FABIANI</li></ul>
+                    </div>
+
+            </div>
+
+        <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/jquery.scrollex.min.js"></script>
+            <script src="assets/js/jquery.scrolly.min.js"></script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+
+    </body>
+</html>
