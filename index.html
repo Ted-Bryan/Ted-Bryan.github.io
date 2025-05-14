@@ -8,6 +8,19 @@
 		<link rel="icon" type="image/png" href="images/favicon.png">
 		<link rel="stylesheet" href="assets/css/main.css" />
 	<!--<link rel="stylesheet" href="assets/css/overrides.css" />-->
+		<!-- Scroll‑reveal enhancement -->
+		<style>
+			/* Scroll reveal */
+			[data-scroll] {
+				opacity: 0;
+				transform: translateY(20px);
+				transition: opacity .6s ease, transform .6s ease;
+			}
+			[data-scroll].visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		</style>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -16,7 +29,7 @@
 			<div id="wrapper" class="fade-in">
 
 				<!-- Intro -->
-					<div id="intro">
+					<div id="intro" data-scroll>
 						<h1>BRUNO FABIANI PORTFOLIO</h1>
 						<p>Statistician with a solid background in Data Analytics, Data Science, and Machine Learning</p>
 						<ul class="actions">
@@ -37,13 +50,13 @@
 							<li><a href="generic.html">Licenses & Certifications</a></li>
 						</ul>
 						<ul class="icons">
-									<li><a href="https://www.linkedin.com/in/brunofabiani/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
-									<li><a href="https://github.com/Ted-Bryan" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/brunofabiani/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+							<li><a href="https://github.com/Ted-Bryan" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
 						</ul>
 					</nav>
 
 				<!-- Main -->
-					<div id="main">
+					<div id="main" data-scroll>
                         <!-- If you want a project to appear bigger -->
 						<!-- Featured Post -->
 						<!--<article class="post featured">
@@ -59,7 +72,7 @@
 
 						<!-- Posts -->
 						<section class="posts">
-							<article>
+							<article data-scroll>
 								<header>
 									<h2><a href="https://www.microsoft.com/en/customers/story/1640162996264678937-hsr-health-provider-azure-it-italy">S-RACE Project with Microsoft</a></h2>
 								</header>
@@ -70,7 +83,7 @@
 									<li><a href="https://www.microsoft.com/en/customers/story/1640162996264678937-hsr-health-provider-azure-it-italy" class="button">View Project</a></li>
 								</ul>
 							</article>
-							<article>
+							<article data-scroll>
 								<header>
 									<h2><a href="https://sites.google.com/uniroma1.it/d3forhealth/home">D34Health Government Funded Project</a></h2>
 								</header>
@@ -82,7 +95,7 @@
 									<li><a href="https://sites.google.com/uniroma1.it/d3forhealth/home" class="button">View Project</a></li>
 								</ul>
 							</article>
-							<article>
+							<article data-scroll>
 								<header>
 									<h2><a href="https://github.com/Ted-Bryan/Adidas-Sales-Performance-Analysis">Adidas Sales Analysis and Prediction with sklearn</a></h2>
 								</header>
@@ -92,7 +105,7 @@
 									<li><a href="https://github.com/Ted-Bryan/Adidas-Sales-Performance-Analysis" class="button">View project</a></li>
 								</ul>
 							</article>
-							<article>
+							<article data-scroll>
 								<header>
 									<h2><a href="https://causal-machine-learning.github.io/kdd2021-tutorial/">Practical Causal ML with EconML & CausalML</a></h2>
 								</header>
@@ -105,7 +118,7 @@
 									<li><a href="https://causal-machine-learning.github.io/kdd2021-tutorial/" class="button">View Project</a></li>
 								</ul>
 							</article>
-							<article>
+							<article data-scroll>
 								<header>
 									<h2><a href="https://github.com/Ted-Bryan/Shopping-Behavior-Prediction">Shopping Behavior Prediction with ML</a></h2>
 								</header>
@@ -116,7 +129,7 @@
 									<li><a href="https://github.com/Ted-Bryan/Shopping-Behavior-Prediction" class="button">View Project</a></li>
 								</ul>
 							</article>
-							<article>
+							<article data-scroll>
 								<header>
 									<h2><a href="https://github.com/Ted-Bryan/Asynchronous-Web-Scraper">Asynchronous Web Scraper with Python</a></h2>
 								</header>
@@ -168,7 +181,7 @@
 								</ul>
 							</form>
 						</section>-->
-
+					<footer id="footer" data-scroll>
 						<section class="split contact">
 							<section class="alt">
 								<h3>Address</h3>
@@ -191,12 +204,12 @@
 							</section>
 						</section>
 					</footer>
-					</div>
+				</div>
 
 				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; BRUNO FABIANI</li></ul>
-					</div>
+				<div id="copyright">
+					<ul><li>&copy; BRUNO FABIANI</li></ul>
+				</div>
 			</div>
 
 		<!-- Scripts -->
@@ -207,6 +220,33 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<!-- Intersection Observer for scroll reveal -->
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const supportsIO = 'IntersectionObserver' in window;
+				const revealEls = document.querySelectorAll('[data-scroll]');
+
+				if (!supportsIO) {
+					revealEls.forEach(el => el.classList.add('visible'));
+					return;
+				}
+
+				const observer = new IntersectionObserver((entries, obs) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('visible');
+							obs.unobserve(entry.target);
+						}
+					});
+				}, {
+					rootMargin: '0px 0px -10% 0px',
+					threshold: 0.1
+				});
+
+				revealEls.forEach(el => observer.observe(el));
+			});
+		</script>
 
 	</body>
 </html>
