@@ -181,28 +181,28 @@
 								</ul>
 							</form>
 						</section>-->
-					<!--<footer id="footer" data-scroll>-->
-					<section class="split contact">
-						<section class="alt">
-							<h3>Address</h3>
-							Milan, MI (Italy)</p>
+					<footer id="footer" data-scroll>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								Milan, MI (Italy)</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="tel:+393896959030">(+39) 3896959030</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto:bruno.fabiani98@gmail.com">bruno.fabiani98@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/brunofabiani/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+									<li><a href="https://github.com/Ted-Bryan" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
 						</section>
-						<section>
-							<h3>Phone</h3>
-							<p><a href="tel:+393896959030">(+39) 3896959030</a></p>
-						</section>
-						<section>
-							<h3>Email</h3>
-							<p><a href="mailto:bruno.fabiani98@gmail.com">bruno.fabiani98@gmail.com</a></p>
-						</section>
-						<section>
-							<h3>Social</h3>
-							<ul class="icons alt">
-								<li><a href="https://www.linkedin.com/in/brunofabiani/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
-								<li><a href="https://github.com/Ted-Bryan" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-							</ul>
-						</section>
-					</section>
 					</footer>
 				</div>
 
@@ -222,31 +222,31 @@
 			<script src="assets/js/main.js"></script>
 
 		<!-- Intersection Observer for scroll reveal -->
-		<script>
-			document.addEventListener('DOMContentLoaded', () => {
-				const supportsIO = 'IntersectionObserver' in window;
-				const revealEls = document.querySelectorAll('[data-scroll]');
+			<script>
+				document.addEventListener('DOMContentLoaded', () => {
+					const supportsIO = 'IntersectionObserver' in window;
+					const revealEls = document.querySelectorAll('[data-scroll]');
 
-				if (!supportsIO) {
-					revealEls.forEach(el => el.classList.add('visible'));
-					return;
-				}
+					if (!supportsIO) {
+						revealEls.forEach(el => el.classList.add('visible'));
+						return;
+					}
 
-				const observer = new IntersectionObserver((entries, obs) => {
-					entries.forEach(entry => {
-						if (entry.isIntersecting) {
-							entry.target.classList.add('visible');
-							obs.unobserve(entry.target);
-						}
+					const observer = new IntersectionObserver((entries, obs) => {
+						entries.forEach(entry => {
+							if (entry.isIntersecting) {
+								entry.target.classList.add('visible');
+								obs.unobserve(entry.target);
+							}
+						});
+					}, {
+						rootMargin: '0px 0px -10% 0px',
+						threshold: 0.1
 					});
-				}, {
-					rootMargin: '0px 0px -10% 0px',
-					threshold: 0.1
-				});
 
-				revealEls.forEach(el => observer.observe(el));
-			});
-		</script>
+					revealEls.forEach(el => observer.observe(el));
+				});
+			</script>
 
 	</body>
 </html>
