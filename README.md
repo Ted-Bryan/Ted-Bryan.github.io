@@ -10,7 +10,7 @@ It showcases the projects, publications, and credentials that mark my journey fr
 - Smooth **scroll-reveal** animations ✨ and a clean, responsive design.
 
 ## 🔧 Tech stack
-`HTML` • `CSS` • `JavaScript` • `Font Awesome icons` • `GitHub Pages`
+`HTML` • `CSS` • `SCSS` • `JavaScript` • `Font Awesome icons` • `GitHub Pages`
 
 ## 📌 Live site
 > **👉 [ted-bryan.github.io](https://ted-bryan.github.io)**
