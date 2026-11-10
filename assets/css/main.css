@@ -3211,11 +3211,10 @@ input, select, textarea {
 		color: #eeeeee;
 	}
 
-/* Fixed background */
+/* Fixed ribbon background */
 
 	body:before,
-	body:after {
-		content: '';
+	#backgroundArtwork {
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -3224,18 +3223,37 @@ input, select, textarea {
 		height: 100lvh;
 		pointer-events: none;
 		z-index: 0;
+		background-color: #0c0d17;
 	}
 
 	body:before {
-		background: radial-gradient(ellipse at 16% 22%, rgba(24, 110, 124, 0.32), transparent 60%),
-			radial-gradient(ellipse at 85% 78%, rgba(78, 62, 128, 0.24), transparent 62%),
-			linear-gradient(135deg, #111820, #1b2430 55%, #10171f);
+		content: '';
+		background-image: url('../../images/background-ribbons.svg');
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
 	}
 
-	body:after {
-		background: radial-gradient(ellipse at 80% 18%, rgba(45, 92, 145, 0.28), transparent 60%),
-			radial-gradient(ellipse at 22% 75%, rgba(37, 119, 108, 0.24), transparent 62%);
-		opacity: 0.35;
+	body.background-animated:before {
+		background-image: none;
+	}
+
+	#backgroundArtwork {
+		overflow: hidden;
+	}
+
+	.background-ribbon {
+		position: absolute;
+		top: -12%;
+		left: -12%;
+		width: 124%;
+		height: 124%;
+		transform-origin: 50% 50%;
+	}
+
+	.background-ribbon svg {
+		display: block;
+		width: 100%;
+		height: 100%;
 	}
 
 	#backgroundToggle {
@@ -3271,11 +3289,15 @@ input, select, textarea {
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
-		body.background-animated:after {
-			animation: background-glow 28s ease-in-out infinite alternate;
+		body.background-animated .background-ribbon-back {
+			animation: ribbon-flow-back 14s ease-in-out -5s infinite alternate;
 		}
 
-		body.background-paused:after {
+		body.background-animated .background-ribbon-front {
+			animation: ribbon-flow-front 11s ease-in-out -4s infinite alternate;
+		}
+
+		body.background-paused #backgroundArtwork .background-ribbon {
 			animation-play-state: paused;
 		}
 
@@ -3284,9 +3306,14 @@ input, select, textarea {
 		}
 	}
 
-	@keyframes background-glow {
-		from { opacity: 0.15; }
-		to { opacity: 0.85; }
+	@keyframes ribbon-flow-back {
+		from { transform: translate3d(-3%, 1.5%, 0) rotate(-1.6deg); }
+		to { transform: translate3d(3%, -1.5%, 0) rotate(1.6deg); }
+	}
+
+	@keyframes ribbon-flow-front {
+		from { transform: translate3d(3.5%, -1.5%, 0) rotate(1.2deg); }
+		to { transform: translate3d(-3.5%, 1.5%, 0) rotate(-1.2deg); }
 	}
 
 /* Wrapper */
