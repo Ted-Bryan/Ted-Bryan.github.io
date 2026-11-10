@@ -61,3 +61,10 @@
 #skills .skill > span:first-child {
 	font-weight: 600;
 }
+
+.card-deck.is-enhanced .card-deck__label,
+.card-deck.is-enhanced .card-deck__select,
+.card-deck.is-enhanced .card-deck__select option {
+	font-family: "Metropolis", "Source Sans Pro", Helvetica, sans-serif;
+	font-weight: 400;
+}
