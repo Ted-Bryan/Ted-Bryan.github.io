@@ -68,3 +68,9 @@
 	font-family: "Metropolis", "Source Sans Pro", Helvetica, sans-serif;
 	font-weight: 400;
 }
+
+.post > header.major > .date,
+.card-deck.is-enhanced .card-deck__counter {
+	font-family: "Metropolis", "Source Sans Pro", Helvetica, sans-serif;
+	font-weight: 400;
+}
