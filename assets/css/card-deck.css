@@ -1,1 +1,381 @@
-m«ëˆ§½©buªàºg§µ«,zÛ?rË?qªÝuç$rË±¨m«ë€Ý…¹îš(§~)^¢‹­~)^mºÞjFëy©ÊyÚ.¶›­º˜§¶‰bë(~W§‚Øgº`Ýuç(uç^r‡^Šzn¶^–—b²™ZÊØb²g¬±¨Š)éºØ§¦ë_ŠWyö®–×è®Ë]Šz(ºÚn¶‹­¦ë_ŠWyö®–×è®Ë]¢ë
+/* The original lists remain the fallback until the deck is enhanced. */
+
+[data-card-deck][data-scroll],
+[data-card-deck] [data-scroll] {
+	opacity: 1 !important;
+	transform: none !important;
+}
+
+#main > .posts.has-card-deck {
+	display: block;
+}
+
+#main > .posts.has-card-deck > .card-deck {
+	width: 100%;
+	padding: 2.5rem 1.5rem 2rem;
+	border: 0;
+}
+
+.card-deck.is-enhanced {
+	--deck-peek: clamp(3rem, 12vw, 10rem);
+	min-width: 0;
+	text-align: center;
+}
+
+/* Reclaim room for the fan inside the existing certification post. */
+#main > .post.has-card-deck > .card-deck {
+	width: calc(100% + 8rem);
+	margin-right: -4rem;
+	margin-left: -4rem;
+}
+
+.card-deck__instructions,
+.card-deck__status {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}
+
+.card-deck.is-enhanced .card-deck__controls {
+	display: grid;
+	grid-template-columns: 3rem minmax(0, 1fr) 3rem;
+	align-items: end;
+	gap: 1rem;
+	width: calc(100% - 2 * var(--deck-peek));
+	max-width: 50rem;
+	margin: 0 auto 0.5rem;
+}
+
+.card-deck.is-enhanced .card-deck__label {
+	display: block;
+	min-width: 0;
+	margin: 0;
+	font: inherit;
+	text-align: left;
+}
+
+.card-deck.is-enhanced .card-deck__select {
+	display: block;
+	width: 100%;
+	min-width: 0;
+	min-height: 44px;
+	margin: 0.35rem 0 0;
+	padding-right: 2.5rem;
+	border-color: #c9c0d7;
+	border-radius: 0.35rem;
+	background-color: #ffffff;
+}
+
+.card-deck.is-enhanced .card-deck__arrow {
+	display: inline-grid;
+	place-items: center;
+	width: 3rem;
+	min-width: 44px;
+	height: 3rem;
+	min-height: 44px;
+	padding: 0;
+	margin: 0;
+	border: 1px solid #c9c0d7;
+	border-radius: 50%;
+	background: #ffffff;
+	box-shadow: none;
+	color: #75639d !important;
+	font: inherit;
+	line-height: 1;
+	letter-spacing: normal;
+	text-indent: 0;
+}
+
+.card-deck.is-enhanced .card-deck__arrow:hover {
+	border-color: #75639d;
+	background: #f4f1f8;
+	box-shadow: none;
+}
+
+.card-deck.is-enhanced .card-deck__stage {
+	position: relative;
+	isolation: isolate;
+	min-width: 0;
+	width: 100%;
+	padding: 1.5rem var(--deck-peek) 2.5rem;
+	overflow: hidden;
+	touch-action: pan-y pinch-zoom;
+}
+
+.card-deck.is-enhanced .card-deck__slide {
+	min-width: 0;
+	border: 1px solid #ded8e8;
+	border-radius: 0.75rem;
+	background: #ffffff;
+	box-shadow: 0 0.75rem 2rem rgba(39, 31, 59, 0.09);
+	overflow-wrap: anywhere;
+	transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.card-deck.is-enhanced .card-deck__slide[hidden] {
+	display: none;
+}
+
+.card-deck.is-enhanced .card-deck__slide.is-active {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	opacity: 1;
+	transform: none;
+}
+
+.card-deck.is-enhanced .card-deck__slide.is-previous,
+.card-deck.is-enhanced .card-deck__slide.is-next {
+	position: absolute;
+	top: 2.5rem;
+	left: var(--deck-peek);
+	z-index: 0;
+	width: calc(100% - 2 * var(--deck-peek));
+	max-height: 30rem;
+	overflow: hidden;
+	opacity: 0.87;
+	pointer-events: none;
+	user-select: none;
+	transform-origin: 50% 15%;
+}
+
+.card-deck.is-enhanced .card-deck__slide.is-previous {
+	transform: translateX(calc(-1.1 * var(--deck-peek))) rotate(-3deg) scale(0.94);
+}
+
+.card-deck.is-enhanced .card-deck__slide.is-next {
+	transform: translateX(calc(1.1 * var(--deck-peek))) rotate(3deg) scale(0.94);
+}
+
+.card-deck.is-enhanced .card-deck__slide > article,
+.card-deck.is-enhanced .card-deck__slide > .cert-card {
+	width: 100%;
+	min-width: 0;
+	padding: clamp(1.25rem, 3vw, 2.75rem);
+	margin: 0;
+	border: 0;
+	text-align: center;
+}
+
+.card-deck.is-enhanced .card-deck__slide .image {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	margin: 1.5rem auto;
+}
+
+.card-deck.is-enhanced .card-deck__slide .image img {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-height: 30rem;
+	object-fit: contain;
+}
+
+.card-deck.is-enhanced .card-deck__slide p:empty {
+	display: none;
+}
+
+.card-deck.is-enhanced .card-deck__slide > * > :last-child {
+	margin-bottom: 0;
+}
+
+.card-deck.is-enhanced .card-deck__pagination {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem 1.25rem;
+	min-width: 0;
+	margin: 0;
+}
+
+.card-deck.is-enhanced .card-deck__counter {
+	margin: 0;
+	color: #75639d;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.card-deck.is-enhanced .card-deck__dots {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 100%;
+	gap: 0;
+}
+
+.card-deck.is-enhanced .card-deck__dot {
+	display: inline-grid;
+	place-items: center;
+	width: 44px;
+	min-width: 44px;
+	height: 44px;
+	min-height: 44px;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	border-radius: 50%;
+	background: transparent;
+	box-shadow: none;
+	line-height: 1;
+}
+
+.card-deck.is-enhanced .card-deck__dot:before {
+	content: '';
+	width: 9px;
+	height: 9px;
+	border: 1px solid #9988b5;
+	border-radius: 50%;
+	background: #ffffff;
+}
+
+.card-deck.is-enhanced .card-deck__dot[aria-current="true"]:before {
+	border-color: #75639d;
+	background: #75639d;
+}
+
+.card-deck.is-enhanced .card-deck__dot:hover {
+	background: #f4f1f8;
+	box-shadow: none;
+}
+
+.card-deck.is-enhanced .card-deck__arrow:focus-visible,
+.card-deck.is-enhanced .card-deck__select:focus-visible,
+.card-deck.is-enhanced .card-deck__dot:focus-visible {
+	outline: 3px solid #75639d;
+	outline-offset: 3px;
+}
+
+.card-deck.is-enhanced .card-deck__stage:focus-visible {
+	outline: 3px solid #75639d;
+	outline-offset: -3px;
+}
+
+@media screen and (max-width: 1280px) {
+	#main > .post.has-card-deck > .card-deck {
+		width: calc(100% + 4rem);
+		margin-right: -2rem;
+		margin-left: -2rem;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	#main > .posts.has-card-deck > .card-deck {
+		padding: 1.5rem 0.5rem;
+	}
+
+	#main > .post.has-card-deck > .card-deck {
+		width: calc(100% + 2rem);
+		margin-right: -1rem;
+		margin-left: -1rem;
+	}
+
+	.card-deck.is-enhanced {
+		--deck-peek: 0.9rem;
+	}
+
+	.card-deck.is-enhanced .card-deck__controls {
+		grid-template-columns: 44px minmax(0, 1fr) 44px;
+		gap: 0.5rem;
+		width: calc(100% - 2rem);
+	}
+
+	.card-deck.is-enhanced .card-deck__arrow {
+		width: 44px;
+		height: 44px;
+	}
+
+	.card-deck.is-enhanced .card-deck__stage {
+		padding-top: 1.25rem;
+		padding-bottom: 2rem;
+	}
+
+	.card-deck.is-enhanced .card-deck__slide > article,
+	.card-deck.is-enhanced .card-deck__slide > .cert-card {
+		padding: 1.25rem;
+	}
+
+	.card-deck.is-enhanced .card-deck__slide {
+		border-color: #c5b8d9;
+	}
+
+	.card-deck.is-enhanced .card-deck__slide.is-previous {
+		transform: translateX(calc(-1.1 * var(--deck-peek))) rotate(-2deg) scale(0.98);
+	}
+
+	.card-deck.is-enhanced .card-deck__slide.is-next {
+		transform: translateX(calc(1.1 * var(--deck-peek))) rotate(2deg) scale(0.98);
+	}
+
+	.card-deck.is-enhanced .card-deck__pagination {
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.card-deck.is-enhanced *,
+	.card-deck.is-enhanced *:before,
+	.card-deck.is-enhanced *:after {
+		animation: none !important;
+		transition: none !important;
+		scroll-behavior: auto !important;
+	}
+
+	.card-deck.is-enhanced a.image:hover img {
+		transform: none;
+	}
+}
+
+@media print {
+	#main > .posts.has-card-deck > .card-deck,
+	#main > .post.has-card-deck > .card-deck {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	.card-deck.is-enhanced .card-deck__controls,
+	.card-deck.is-enhanced .card-deck__pagination,
+	.card-deck.is-enhanced .card-deck__instructions,
+	.card-deck.is-enhanced .card-deck__status {
+		display: none !important;
+	}
+
+	.card-deck.is-enhanced .card-deck__stage {
+		padding: 0;
+		overflow: visible;
+	}
+
+	.card-deck.is-enhanced .card-deck__slide,
+	.card-deck.is-enhanced .card-deck__slide[hidden] {
+		display: block !important;
+		position: static !important;
+		width: 100% !important;
+		max-height: none !important;
+		margin: 0 0 2rem;
+		overflow: visible;
+		opacity: 1 !important;
+		transform: none !important;
+		box-shadow: none;
+		break-inside: avoid-page;
+		user-select: auto;
+	}
+
+	.card-deck.is-enhanced [data-scroll] {
+		opacity: 1 !important;
+		transform: none !important;
+	}
+
+	.card-deck.is-enhanced .card-deck__slide .image img {
+		max-height: none;
+	}
+}
