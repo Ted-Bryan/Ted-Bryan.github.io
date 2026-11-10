@@ -3211,6 +3211,84 @@ input, select, textarea {
 		color: #eeeeee;
 	}
 
+/* Fixed background */
+
+	body:before,
+	body:after {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		height: 100lvh;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	body:before {
+		background: radial-gradient(ellipse at 16% 22%, rgba(24, 110, 124, 0.32), transparent 60%),
+			radial-gradient(ellipse at 85% 78%, rgba(78, 62, 128, 0.24), transparent 62%),
+			linear-gradient(135deg, #111820, #1b2430 55%, #10171f);
+	}
+
+	body:after {
+		background: radial-gradient(ellipse at 80% 18%, rgba(45, 92, 145, 0.28), transparent 60%),
+			radial-gradient(ellipse at 22% 75%, rgba(37, 119, 108, 0.24), transparent 62%);
+		opacity: 0.35;
+	}
+
+	#backgroundToggle {
+		display: none;
+		position: fixed;
+		right: 1rem;
+		right: max(1rem, env(safe-area-inset-right));
+		bottom: 1rem;
+		bottom: max(1rem, env(safe-area-inset-bottom));
+		z-index: 10000;
+		min-height: 44px;
+		height: auto;
+		margin: 0;
+		padding: 0.65rem 0.85rem;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		background-color: rgba(17, 24, 32, 0.9);
+		box-shadow: none;
+		color: #e1e8ef !important;
+		font-size: 0.65rem;
+		letter-spacing: 0.04em;
+		line-height: 1.4;
+		text-transform: none;
+		white-space: nowrap;
+	}
+
+	#backgroundToggle:hover {
+		border-color: #78becb;
+	}
+
+	#backgroundToggle:focus-visible {
+		outline: 2px solid #78becb;
+		outline-offset: 3px;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		body.background-animated:after {
+			animation: background-glow 28s ease-in-out infinite alternate;
+		}
+
+		body.background-paused:after {
+			animation-play-state: paused;
+		}
+
+		body.background-animated #backgroundToggle {
+			display: block;
+		}
+	}
+
+	@keyframes background-glow {
+		from { opacity: 0.15; }
+		to { opacity: 0.85; }
+	}
+
 /* Wrapper */
 
 	#wrapper {
@@ -3223,26 +3301,6 @@ input, select, textarea {
 		overflow: hidden;
 	}
 
-		#wrapper > .bg {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: #212931;
-			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");
-			background-size: auto,								auto,														100% auto;
-			background-position: center,								center,														top center;
-			background-repeat: repeat,								no-repeat,													no-repeat;
-			background-attachment: scroll,								scroll,														scroll;
-			z-index: -1;
-		}
-
-			#wrapper > .bg.fixed {
-				position: fixed;
-				width: 100vw;
-				height: 100vh;
-			}
 
 		#wrapper.fade-in:before {
 			pointer-events: none;
@@ -3269,13 +3327,6 @@ input, select, textarea {
 			opacity: 1;
 		}
 
-		@media screen and (orientation: portrait) {
-
-			#wrapper > .bg {
-				background-size: auto,								auto,														auto 175%;
-			}
-
-		}
 
 /* Intro */
 
