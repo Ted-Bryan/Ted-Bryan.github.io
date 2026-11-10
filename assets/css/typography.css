@@ -1,0 +1,63 @@
+@font-face {
+	font-family: "Metropolis";
+	src: url("../webfonts/metropolis/Metropolis-Regular.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Metropolis";
+	src: url("../webfonts/metropolis/Metropolis-RegularItalic.woff2") format("woff2");
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Metropolis";
+	src: url("../webfonts/metropolis/Metropolis-SemiBold.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Metropolis";
+	src: url("../webfonts/metropolis/Metropolis-Bold.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Metropolis";
+	src: url("../webfonts/metropolis/Metropolis-BoldItalic.woff2") format("woff2");
+	font-style: italic;
+	font-weight: 700;
+	font-display: swap;
+}
+
+/* Apply Metropolis only to the body copy selected for the portfolio refresh. */
+#intro > p,
+[data-card-deck="projects"] article p,
+.post > header.major > p,
+.cert-card > p,
+#experience .timeline-item > strong,
+#experience .timeline-item li,
+#education .timeline-item > strong,
+#education .timeline-item li,
+#skills .skill > span:first-child,
+#language-soft li,
+#footer > .contact > section > p {
+	font-family: "Metropolis", "Source Sans Pro", Helvetica, sans-serif;
+	font-weight: 400;
+}
+
+#intro > p {
+	font-style: italic;
+}
+
+#skills .skill > span:first-child {
+	font-weight: 600;
+}
