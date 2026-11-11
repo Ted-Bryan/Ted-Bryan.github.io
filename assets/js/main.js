@@ -73,6 +73,14 @@
 		updateBackgroundMotion();
 		$body.addClass('background-animated');
 
+		// Hide the control as soon as the page leaves the top, including restored scroll positions.
+		var updateBackgroundToggleVisibility = function() {
+			$backgroundToggle.prop('hidden', (window.pageYOffset || document.documentElement.scrollTop || 0) > 0);
+		};
+		window.addEventListener('scroll', updateBackgroundToggleVisibility, { passive: true });
+		$window.on('pageshow load', updateBackgroundToggleVisibility);
+		updateBackgroundToggleVisibility();
+
 	// Nav Panel.
 
 		// Toggle.

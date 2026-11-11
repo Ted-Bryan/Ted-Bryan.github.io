@@ -194,6 +194,19 @@
 	object-fit: contain;
 }
 
+[data-card-deck="projects"] .card-deck__slide a.image img {
+	transform: none;
+	transition: none;
+}
+
+[data-card-deck="projects"] .card-deck.is-enhanced .card-deck__slide .image--white {
+	background: #ffffff;
+}
+
+[data-card-deck="projects"] .card-deck__slide .image--white img {
+	background: #ffffff;
+}
+
 .card-deck.is-enhanced .card-deck__slide p:empty {
 	display: none;
 }
