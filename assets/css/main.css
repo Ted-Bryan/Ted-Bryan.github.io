@@ -3264,37 +3264,63 @@ input, select, textarea {
 		bottom: 1rem;
 		bottom: max(1rem, env(safe-area-inset-bottom));
 		z-index: 10000;
+		width: 64px;
+		height: 64px;
+		min-width: 44px;
 		min-height: 44px;
-		height: auto;
 		margin: 0;
-		padding: 0.65rem 0.85rem;
-		border: 1px solid rgba(255, 255, 255, 0.2);
-		background-color: rgba(17, 24, 32, 0.9);
-		box-shadow: none;
-		color: #e1e8ef !important;
-		font-size: 0.65rem;
-		letter-spacing: 0.04em;
-		line-height: 1.4;
+		padding: 0;
+		align-content: center;
+		justify-items: center;
+		gap: 5px;
+		border: 1px solid rgba(215, 206, 242, 0.38);
+		border-radius: 0.8rem;
+		background-color: rgba(17, 20, 34, 0.64);
+		box-shadow: 0 2px 8px rgba(12, 13, 23, 0.12);
+		color: #ffffff !important;
+		font-family: "Metropolis", "Source Sans Pro", Helvetica, sans-serif;
+		font-size: 9px;
+		font-weight: 400;
+		letter-spacing: 0;
+		line-height: 1.2;
 		text-transform: none;
 		white-space: nowrap;
 	}
 
 	#backgroundToggle:hover {
-		border-color: #78becb;
+		border-color: #c1b5fa;
+		background-color: rgba(27, 25, 45, 0.8);
+		box-shadow: 0 2px 8px rgba(12, 13, 23, 0.12);
 	}
 
 	#backgroundToggle:focus-visible {
-		outline: 2px solid #78becb;
+		outline: 2px solid #c1b5fa;
 		outline-offset: 3px;
+	}
+
+	#backgroundToggle svg {
+		display: block;
+		width: 22px;
+		height: 22px;
+		fill: currentColor;
+	}
+
+	#backgroundToggle .background-toggle-play,
+	body.background-paused #backgroundToggle .background-toggle-pause {
+		display: none;
+	}
+
+	body.background-paused #backgroundToggle .background-toggle-play {
+		display: block;
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
 		body.background-animated .background-ribbon-back {
-			animation: ribbon-flow-back 14s ease-in-out -5s infinite alternate;
+			animation: ribbon-flow-back 14s steps(42, end) -5s infinite alternate;
 		}
 
 		body.background-animated .background-ribbon-front {
-			animation: ribbon-flow-front 11s ease-in-out -4s infinite alternate;
+			animation: ribbon-flow-front 11s steps(33, end) -4s infinite alternate;
 		}
 
 		body.background-paused #backgroundArtwork .background-ribbon {
@@ -3302,18 +3328,38 @@ input, select, textarea {
 		}
 
 		body.background-animated #backgroundToggle {
-			display: block;
+			display: grid;
 		}
 	}
 
+	/* Eight eased segments, sampled at 24 updates/second on both layers.
+	   Native CSS timing avoids a JavaScript frame loop or full-rate GPU draws. */
 	@keyframes ribbon-flow-back {
-		from { transform: translate3d(-3%, 1.5%, 0) rotate(-1.6deg); }
-		to { transform: translate3d(3%, -1.5%, 0) rotate(1.6deg); }
+		0% { transform: translate3d(-3%, 1.5%, 0) rotate(-1.6deg); }
+		12.5% { transform: translate3d(-2.8133%, 1.4067%, 0) rotate(-1.5004deg); }
+		25% { transform: translate3d(-2.225%, 1.1125%, 0) rotate(-1.1867deg); }
+		37.5% { transform: translate3d(-1.2434%, 0.6217%, 0) rotate(-0.6632deg); }
+		50% { transform: translate3d(0, 0, 0) rotate(0deg); }
+		62.5% { transform: translate3d(1.2434%, -0.6217%, 0) rotate(0.6632deg); }
+		75% { transform: translate3d(2.225%, -1.1125%, 0) rotate(1.1867deg); }
+		87.5% { transform: translate3d(2.8133%, -1.4067%, 0) rotate(1.5004deg); }
+		100% { transform: translate3d(3%, -1.5%, 0) rotate(1.6deg); }
 	}
 
 	@keyframes ribbon-flow-front {
-		from { transform: translate3d(3.5%, -1.5%, 0) rotate(1.2deg); }
-		to { transform: translate3d(-3.5%, 1.5%, 0) rotate(-1.2deg); }
+		0% { transform: translate3d(3.5%, -1.5%, 0) rotate(1.2deg); }
+		12.5% { transform: translate3d(3.2822%, -1.4067%, 0) rotate(1.1253deg); }
+		25% { transform: translate3d(2.5959%, -1.1125%, 0) rotate(0.89deg); }
+		37.5% { transform: translate3d(1.4506%, -0.6217%, 0) rotate(0.4974deg); }
+		50% { transform: translate3d(0, 0, 0) rotate(0deg); }
+		62.5% { transform: translate3d(-1.4506%, 0.6217%, 0) rotate(-0.4974deg); }
+		75% { transform: translate3d(-2.5959%, 1.1125%, 0) rotate(-0.89deg); }
+		87.5% { transform: translate3d(-3.2822%, 1.4067%, 0) rotate(-1.1253deg); }
+		100% { transform: translate3d(-3.5%, 1.5%, 0) rotate(-1.2deg); }
+	}
+
+	@media print {
+		#backgroundArtwork, #backgroundToggle { display: none !important; }
 	}
 
 /* Wrapper */

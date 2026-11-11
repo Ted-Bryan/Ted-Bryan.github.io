@@ -40,7 +40,7 @@
 			.prependTo($body);
 
 		var backgroundPaused = false,
-			$backgroundToggle = $('<button type="button" id="backgroundToggle">Pause background</button>')
+			$backgroundToggle = $('<button type="button" id="backgroundToggle" aria-controls="backgroundArtwork"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="background-toggle-pause" d="M7 4h4v16H7zm6 0h4v16h-4z"/><path class="background-toggle-play" d="M8 4v16l12-8z"/></svg><span>Background</span></button>')
 				.appendTo($body);
 
 		try {
@@ -51,7 +51,8 @@
 
 		var updateBackgroundMotion = function() {
 			$body.toggleClass('background-paused', backgroundPaused || document.hidden);
-			$backgroundToggle.text(backgroundPaused ? 'Resume background' : 'Pause background');
+			var label = backgroundPaused ? 'Play background animation' : 'Pause background animation';
+			$backgroundToggle.attr({ 'aria-label': label, title: label });
 		};
 
 		$backgroundToggle.on('click', function() {
@@ -66,6 +67,9 @@
 		});
 
 		$(document).on('visibilitychange', updateBackgroundMotion);
+		$window.on('pageshow', updateBackgroundMotion).on('pagehide', function() {
+			$body.addClass('background-paused');
+		});
 		updateBackgroundMotion();
 		$body.addClass('background-animated');
 
